@@ -4,6 +4,8 @@ import pyautogui
 import sys
 import time
 import cv2
+from pathlib import Path
+print(Path.cwd())
 
 # make a function that gets information from the user
 
