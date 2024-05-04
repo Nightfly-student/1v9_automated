@@ -36,11 +36,13 @@ def run(region, user):
 
     walk = os.walk("/script")
 
-    print(walk, flush=True)
+    for root, dirs, files in walk:
+        for file in files:
+            print(file, flush=True)
 
 # C:\Users\Administrator\1v9_automated\script\fileButton.JPG
     try :
-        file = pyautogui.locateOnScreen(walk + '/fileButton.JPG',
+        file = pyautogui.locateOnScreen("\script\fileButton.JPG",
             confidence=0.6,
             minSearchTime=5
         )
