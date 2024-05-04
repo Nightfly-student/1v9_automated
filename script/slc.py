@@ -30,8 +30,8 @@ def run(region, user):
     # check where to click
 
 
-    moveAndClickToFile("fileButton.JPG", 1)
-    moveAndClickToFile("clipboard.png", 2)  
+    moveAndClickToFile("fileButton.JPG", 1, 0.65)
+    moveAndClickToFile("clipboard.png", 2, 0.65)  
 
     pyautogui.press('tab')
     pyautogui.press('tab')
