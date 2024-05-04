@@ -4,8 +4,7 @@ import pyautogui
 import sys
 import time
 import cv2
-from pathlib import Path
-print(Path.cwd())
+import os
 
 # make a function that gets information from the user
 
@@ -35,8 +34,13 @@ def run(region, user):
 
     print("clicking on file button", flush=True)
 
+    walk = os.walk("/script")
+
+    print(walk, flush=True)
+
+# C:\Users\Administrator\1v9_automated\script\fileButton.JPG
     try :
-        file = pyautogui.locateOnScreen("/script/fileButton.JPG",
+        file = pyautogui.locateOnScreen(walk + '/fileButton.JPG',
             confidence=0.6,
             minSearchTime=5
         )
@@ -57,7 +61,7 @@ def run(region, user):
 
     time.sleep(1)
 
-    load = pyautogui.locateOnScreen('/script/clipboard.png',
+    load = pyautogui.locateOnScreen('\script\clipboard.png',
             confidence=0.5,
             minSearchTime=5
     )
