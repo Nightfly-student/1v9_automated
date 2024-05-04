@@ -34,9 +34,12 @@ def run(region, user):
 # C:\Users\Administrator\1v9_automated\script\fileButton.JPG
 
     moveAndClickToFile("fileButton.JPG", 1)
-    moveAndClickToFile("clipboard.png", 3)  
+    moveAndClickToFile("clipboard.png", 2)  
 
-    moveAndClickToFile("import.PNG", 1, 0.4)
+    app.window(title_re="Import accounts").set_focus()
+    time.sleep(1)
+
+    moveAndClickToFile("import.PNG", 3, 0.5)
 
     moveAndClickToFile("checkerButton.JPG", 1, 0.8) 
     moveAndClickToFile("checkerStart.JPG", 1, 0.7)
