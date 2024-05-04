@@ -39,7 +39,9 @@ def run(region, user):
 
         if file:
             break
-        
+
+    print(file, flush=True)
+
     pyautogui.moveTo(file)
 
     time.sleep(1)
