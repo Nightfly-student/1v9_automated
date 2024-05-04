@@ -74,7 +74,6 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
     try:
         file = pyautogui.locateCenterOnScreen(filePath,
             confidence=confidence,
-            grayscale=True
         )
     except Exception as e:
         print(e, flush=True)
