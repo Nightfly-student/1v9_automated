@@ -96,7 +96,7 @@ def waitUntilFileButton (fileName):
     while True:
         try:
             file = pyautogui.locateOnScreen(filePath,
-                confidence=0.5,
+                confidence=0.65,
             )
             time.sleep(1)
         except Exception as e:
