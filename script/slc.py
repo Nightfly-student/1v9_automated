@@ -34,33 +34,19 @@ def run(region, user):
 # C:\Users\Administrator\1v9_automated\script\fileButton.JPG
 
     moveAndClickToFile("fileButton.JPG", 1)
-    moveAndClickToFile("clipboard.png", 1)  
-
-    time.sleep(2)
+    moveAndClickToFile("clipboard.png", 3)  
 
     moveAndClickToFile("import.JPG", 1)
-
-    time.sleep(2)
 
     moveAndClickToFile("checkerButton.JPG", 1) 
     moveAndClickToFile("checkerStart.JPG", 1)
 
     waitUntilFileButton("finished.JPG")
 
-    time.sleep(2)
-
     moveAndClickToFile("toAccount.JPG", 1) 
 
-    time.sleep(1)
-
     moveAndClickToFile("copyInfo.JPG", 1)
-
-    time.sleep(1)
-
     moveAndClickToFile("copyFormat.JPG", 1)
-
-    time.sleep(1)
-
     moveAndClickToFile("exportToCSV.JPG", 1)
 
     time.sleep(2)
@@ -68,8 +54,7 @@ def run(region, user):
     # do it twice to make sure it works
     for i in range(2):
         moveAndClickToFile("edit.JPG", 1)
-        moveAndClickToFile("clearAccount.JPG", 1)
-        time.sleep(2)
+        moveAndClickToFile("clearAccount.JPG", 3)
         moveAndClickToFile("clearAccountAccept.JPG", 1)
 
     return pyperclip.paste()
@@ -81,13 +66,12 @@ def moveAndClickToFile (fileName, sleepTime):
 
     try:
         file = pyautogui.locateOnScreen(filePath,
-            confidence=0.7,
-            minSearchTime=5
+            confidence=0.8,
         )
     except Exception as e:
         return "Could not find file button"
     
-    pyautogui.moveTo(file, duration=2)
+    pyautogui.moveTo(file, duration=1)
     pyautogui.click(file)   
 
     time.sleep(sleepTime)
