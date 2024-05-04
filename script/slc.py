@@ -51,11 +51,14 @@ def run(region, user):
 
     waitUntilFileButton("finished.JPG")
 
-    # moveAndClickToFile("toAccount.JPG", 1, 0.8) 
+    moveAndClickToFile("toAccount.JPG", 1, 0.7) 
 
-    # moveAndClickToFile("copyInfo.JPG", 1, 0.5)
-    # moveAndClickToFile("copyFormat.JPG", 1, 0.8)
-    # moveAndClickToFile("exportToCSV.JPG", 1, 0.8)
+    pyautogui.rightClick(duration=0.5)
+    time.sleep(1)
+
+    moveAndClickToFile("copyInfo.JPG", 1, 0.7)
+    moveAndClickToFile("copyFormat.JPG", 1, 0.7)
+    moveAndClickToFile("exportToCSV.JPG", 1, 0.7)
 
     # time.sleep(2)
 
@@ -86,7 +89,7 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
     print(file, flush=True)
 
     # pyautogui.moveTo(file, duration=0.5)
-    pyautogui.click(file, clicks=click, interval=0.0, button='left')   
+    pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2)   
 
     time.sleep(sleepTime)
 
@@ -98,14 +101,14 @@ def waitUntilFileButton (fileName):
     while True:
         try:
             file = pyautogui.locateOnScreen(filePath,
-                grayscale=True,
                 confidence=0.65,
             )
+            print("waiting for file button", flush=True)
             time.sleep(1)
         except Exception as e:
             return False
 
-        if file:
+        if file is not None:
             break
 
     print("found file button", flush=True)
