@@ -17,7 +17,7 @@ app.post('/check', async (req, res) => {
   const { spawn } = require('child_process');
 
   const python = spawn('python', [
-    '/script/slc.py',
+    __dirname + '/script/slc.py',
     req.body.region,
     req.body.user,
   ]);
