@@ -103,15 +103,15 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
 def waitUntilFileButton (fileName):
     filePath = cv2.imread('script/' + fileName)
     
-    file = pyautogui.locateOnScreen(filePath,
-                confidence=0.65,
-            )
-    print("waiting for file button", flush=True)
-    
-    if file == None:
-        return False
-    else:
+    try:
+        pyautogui.locateOnScreen(filePath,
+            confidence=0.65,
+        )
+        print("waiting for file button", flush=True)
         return True
+    except Exception as e:
+        print("Could not find file button", flush=True)
+        return False
 
 run(sys.argv[1], sys.argv[2])
 
