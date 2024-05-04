@@ -34,7 +34,7 @@ def run(region, user):
     print("clicking on file button", flush=True)
 
     try :
-        file = pyautogui.locateOnScreen(cv2.imread('clipboard.png'),
+        file = pyautogui.locateOnScreen(cv2.imread(r'clipboard.png'),
             confidence=0.6,
             minSearchTime=5
         )
