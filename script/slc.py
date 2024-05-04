@@ -50,7 +50,7 @@ def moveAndClickToFile (fileName, sleepTime):
 
     try:
         file = pyautogui.locateOnScreen(filePath,
-            confidence=0.6,
+            confidence=0.7,
             minSearchTime=5
         )
     except Exception as e:
