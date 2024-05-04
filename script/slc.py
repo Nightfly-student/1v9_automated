@@ -7,8 +7,8 @@ import sys
 
 def run(region, user):
 
-    print(region, user)
-    print("Running")
+    print(region, user, flush=True)
+    print("Running", flush=True)
     # foucs on the window SLC Checker - Reborn
     app = Application().connect(title_re="SLC Checker - Reborn")
 
