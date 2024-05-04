@@ -39,14 +39,16 @@ def run(region, user):
     pyautogui.press('tab')
     pyautogui.press('enter')
 
-    time.sleep(2)
+    time.sleep(5)
 
     window.set_focus()
 
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
+    print("imported", flush=True)
     moveAndClickToFile("checkerButton.JPG", 1) 
+    print("clicked checker", flush=True)
     moveAndClickToFile("checkerStart.JPG", 1)
 
     waitUntilFileButton("finished.JPG")
