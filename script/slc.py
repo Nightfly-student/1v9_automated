@@ -39,26 +39,26 @@ def run(region, user):
     app.window(title_re="Import accounts").set_focus()
     time.sleep(1)
 
-    moveAndClickToFile("import.JPG", 3, 0.5,2)
+    moveAndClickToFile("import.JPG", 3, 0.5)
 
-    moveAndClickToFile("checkerButton.JPG", 1, 0.8) 
-    moveAndClickToFile("checkerStart.JPG", 1, 0.7)
+    # moveAndClickToFile("checkerButton.JPG", 1, 0.8) 
+    # moveAndClickToFile("checkerStart.JPG", 1, 0.7)
 
-    waitUntilFileButton("finished.JPG")
+    # waitUntilFileButton("finished.JPG")
 
-    moveAndClickToFile("toAccount.JPG", 1, 0.8) 
+    # moveAndClickToFile("toAccount.JPG", 1, 0.8) 
 
-    moveAndClickToFile("copyInfo.JPG", 1, 0.5)
-    moveAndClickToFile("copyFormat.JPG", 1, 0.8)
-    moveAndClickToFile("exportToCSV.JPG", 1, 0.8)
+    # moveAndClickToFile("copyInfo.JPG", 1, 0.5)
+    # moveAndClickToFile("copyFormat.JPG", 1, 0.8)
+    # moveAndClickToFile("exportToCSV.JPG", 1, 0.8)
 
-    time.sleep(2)
+    # time.sleep(2)
 
-    # do it twice to make sure it works
-    for i in range(2):
-        moveAndClickToFile("edit.JPG", 1, 0.8)
-        moveAndClickToFile("clearAccount.JPG", 3, 0.7)
-        moveAndClickToFile("clearAccountAccept.JPG", 1, 0.5)
+    # # do it twice to make sure it works
+    # for i in range(2):
+    #     moveAndClickToFile("edit.JPG", 1, 0.8)
+    #     moveAndClickToFile("clearAccount.JPG", 3, 0.7)
+    #     moveAndClickToFile("clearAccountAccept.JPG", 1, 0.5)
 
     return pyperclip.paste()
 
@@ -73,6 +73,7 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
             minSearchTime=5
         )
     except Exception as e:
+        print(e)
         return "Could not find file button"
     
     # move first only the y axis then x axis
