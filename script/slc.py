@@ -99,14 +99,11 @@ def waitUntilFileButton (fileName):
     filePath = cv2.imread('script/' + fileName)
 
     while True:
-        try:
-            file = pyautogui.locateOnScreen(filePath,
+        file = pyautogui.locateOnScreen(filePath,
                 confidence=0.65,
             )
-            print("waiting for file button", flush=True)
-            time.sleep(1)
-        except Exception as e:
-            return False
+        print("waiting for file button", flush=True)
+        time.sleep(1)
 
         if file is not None:
             break
