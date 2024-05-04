@@ -65,7 +65,7 @@ def moveAndClickToFile (fileName, sleepTime):
     filePath = cv2.imread('script/' + fileName)
 
     try:
-        file = pyautogui.locateOnScreen(filePath,
+        file = pyautogui.locateCenterOnScreen(filePath,
             confidence=0.6,
         )
     except Exception as e:
