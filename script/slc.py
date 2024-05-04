@@ -31,15 +31,15 @@ def run(region, user):
 
 # C:\Users\Administrator\1v9_automated\script\fileButton.JPG
 
-    moveAndClickToFile("fileButton.JPG", 1)
-    moveAndClickToFile("clipboard.png", 2)  
+    # moveAndClickToFile("fileButton.JPG", 1)
+    # moveAndClickToFile("clipboard.png", 2)  
 
-    pyautogui.press('tab')
-    pyautogui.press('tab')
-    pyautogui.press('tab')
-    pyautogui.press('enter')
+    # pyautogui.press('tab')
+    # pyautogui.press('tab')
+    # pyautogui.press('tab')
+    # pyautogui.press('enter')
 
-    time.sleep(2)
+    # time.sleep(2)
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
