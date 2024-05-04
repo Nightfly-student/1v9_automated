@@ -36,37 +36,37 @@ def run(region, user):
     moveAndClickToFile("fileButton.JPG", 1)
     moveAndClickToFile("clipboard.png", 3)  
 
-    moveAndClickToFile("import.PNG", 1)
+    moveAndClickToFile("import.PNG", 1, 0.5)
 
-    moveAndClickToFile("checkerButton.JPG", 1) 
-    moveAndClickToFile("checkerStart.JPG", 1)
+    moveAndClickToFile("checkerButton.JPG", 1, 0.8) 
+    moveAndClickToFile("checkerStart.JPG", 1, 0.7)
 
     waitUntilFileButton("finished.JPG")
 
-    moveAndClickToFile("toAccount.JPG", 1) 
+    moveAndClickToFile("toAccount.JPG", 1, 0.8) 
 
-    moveAndClickToFile("copyInfo.JPG", 1)
-    moveAndClickToFile("copyFormat.JPG", 1)
-    moveAndClickToFile("exportToCSV.JPG", 1)
+    moveAndClickToFile("copyInfo.JPG", 1, 0.5)
+    moveAndClickToFile("copyFormat.JPG", 1, 0.8)
+    moveAndClickToFile("exportToCSV.JPG", 1, 0.8)
 
     time.sleep(2)
 
     # do it twice to make sure it works
     for i in range(2):
-        moveAndClickToFile("edit.JPG", 1)
-        moveAndClickToFile("clearAccount.JPG", 3)
-        moveAndClickToFile("clearAccountAccept.JPG", 1)
+        moveAndClickToFile("edit.JPG", 1, 0.8)
+        moveAndClickToFile("clearAccount.JPG", 3, 0.7)
+        moveAndClickToFile("clearAccountAccept.JPG", 1, 0.5)
 
     return pyperclip.paste()
 
 
 
-def moveAndClickToFile (fileName, sleepTime):
+def moveAndClickToFile (fileName, sleepTime, confidence=0.8):
     filePath = cv2.imread('script/' + fileName)
 
     try:
         file = pyautogui.locateCenterOnScreen(filePath,
-            confidence=0.8,
+            confidence=confidence,
         )
     except Exception as e:
         return "Could not find file button"
