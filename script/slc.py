@@ -3,6 +3,7 @@ import pyperclip
 import pyautogui
 import sys
 import time
+import cv2
 
 # make a function that gets information from the user
 
@@ -32,9 +33,8 @@ def run(region, user):
 
     print("clicking on file button", flush=True)
 
-
     try :
-        file = pyautogui.locateOnScreen('clipboard.png',
+        file = pyautogui.locateOnScreen(cv2.imread('clipboard.png'),
             confidence=0.6,
             minSearchTime=5
         )
