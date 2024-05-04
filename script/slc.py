@@ -36,7 +36,7 @@ def run(region, user):
     moveAndClickToFile("fileButton.JPG", 1)
     moveAndClickToFile("clipboard.png", 3)  
 
-    moveAndClickToFile("import.PNG", 1, 0.5)
+    moveAndClickToFile("import.PNG", 1, 0.4)
 
     moveAndClickToFile("checkerButton.JPG", 1, 0.8) 
     moveAndClickToFile("checkerStart.JPG", 1, 0.7)

@@ -24,7 +24,12 @@ app.post('/check', async (req, res) => {
   ]);
 
   python.stdout.on('data', (data) => {
-    res.send(csvJSON(data.toString()));
+    csv = csvJSON(data.toString());
+  });
+
+  python.on('close', (code) => {
+    console.log(`child process close all stdio with code ${code}`);
+    res.send(csv);
   });
 });
 
