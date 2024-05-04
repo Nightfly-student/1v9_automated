@@ -30,7 +30,7 @@ def run(region, user):
     # check where to click
 
 
-    moveAndClickToFile("fileButton.PNG", 1, 0.5)
+    moveAndClickToFile("fileButton.JPG", 1, 0.5)
     moveAndClickToFile("clipboard.png", 2, 0.5)  
 
     pyautogui.press('tab')
@@ -72,9 +72,7 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
 
     try:
         file = pyautogui.locateCenterOnScreen(filePath,
-            grayscale=True,
             confidence=confidence,
-            minSearchTime=1,
         )
     except Exception as e:
         print("Could not find file button", flush=True)
