@@ -66,12 +66,12 @@ def moveAndClickToFile (fileName, sleepTime):
 
     try:
         file = pyautogui.locateOnScreen(filePath,
-            confidence=0.5,
+            confidence=0.6,
         )
     except Exception as e:
         return "Could not find file button"
     
-    pyautogui.moveTo(file, duration=1)
+    pyautogui.moveTo(file, duration=1, _pause=False)
     pyautogui.click(file)   
 
     time.sleep(sleepTime)
