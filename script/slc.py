@@ -40,10 +40,12 @@ def run(region, user):
     print(file, flush=True)
 
     pyautogui.moveTo(file)
+    pyautogui.mouseDown()
+    pyautogui.click(file)
 
     time.sleep(1)
 
-    pyautogui.click(file)
+    pyautogui.mouseUp()
 
     print("clicking on load accounts from clipboard", flush=True)
 
@@ -54,10 +56,11 @@ def run(region, user):
     )
     
     pyautogui.moveTo(load)
-
-    time.sleep(1)        
-
+    pyautogui.mouseDown()
     pyautogui.click(load)
+
+    time.sleep(1)   
+    pyautogui.mouseUp()     
 
 
 run(sys.argv[1], sys.argv[2])
