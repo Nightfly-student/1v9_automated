@@ -33,7 +33,7 @@ def run(region, user):
     print("clicking on file button", flush=True)
 
     while True:
-        file = pyautogui.locateOnScreen('images/fileButton.JPG',
+        file = pyautogui.locateOnScreen('/images/fileButton.JPG',
             confidence=0.6
         )
 
@@ -49,8 +49,8 @@ def run(region, user):
     print("clicking on load accounts from clipboard", flush=True)
 
     while True:
-        load = pyautogui.locateOnScreen('images/clipboard.png',
-            confidence=0.6
+        load = pyautogui.locateOnScreen('/images/clipboard.png',
+            confidence=0.5
         )
 
         if load:
