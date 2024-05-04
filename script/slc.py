@@ -39,7 +39,7 @@ def run(region, user):
     app.window(title_re="Import accounts").set_focus()
     time.sleep(1)
 
-    moveAndClickToFile("import.PNG", 3, 0.5)
+    moveAndClickToFile("import.JPG", 3, 0.5,2)
 
     moveAndClickToFile("checkerButton.JPG", 1, 0.8) 
     moveAndClickToFile("checkerStart.JPG", 1, 0.7)
@@ -64,7 +64,7 @@ def run(region, user):
 
 
 
-def moveAndClickToFile (fileName, sleepTime, confidence=0.8):
+def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
     filePath = cv2.imread('script/' + fileName)
 
     try:
@@ -78,7 +78,7 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8):
     # move first only the y axis then x axis
     pyautogui.move(0, file.y, duration=0.5)
     pyautogui.move(file.x, 0, duration=0.5)
-    pyautogui.click(file)   
+    pyautogui.click(file, clicks=click, interval=0.0, button='left')   
 
     time.sleep(sleepTime)
 
