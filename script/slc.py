@@ -66,13 +66,17 @@ def run(region, user):
     moveAndClickToFileBackwards("copyFormat.JPG", 1, 0.7)
     moveAndClickToFileBackwards("exportToCSV.JPG", 1, 0.7)
 
-    # time.sleep(2)
+    time.sleep(2)
 
-    # # do it twice to make sure it works
-    # for i in range(2):
-    #     moveAndClickToFile("edit.JPG", 1, 0.8)
-    #     moveAndClickToFile("clearAccount.JPG", 3, 0.7)
-    #     moveAndClickToFile("clearAccountAccept.JPG", 1, 0.5)
+    # do it twice to make sure it works
+    for i in range(2):
+        moveAndClickToFile("edit.JPG", 1, 0.8)
+        moveAndClickToFile("clearAccount.JPG", 3, 0.7)
+        moveAndClickToFile("clearAccountAccept.JPG", 1, 0.5)
+    
+    print(pyperclip.paste(), flush=True)
+
+    time.sleep(5)
 
     return pyperclip.paste()
 
