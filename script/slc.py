@@ -43,7 +43,7 @@ def run(region, user):
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
     print("imported", flush=True)
-    moveAndClickToFile("checkerButton.PNG", 0.5, 0.4) 
+    moveAndClickToFile("checkerButton.PNG", 0.5, 0.35) 
     print("clicked checker", flush=True)
     moveAndClickToFile("checkerStart.PNG", 1, 0.5)
 
