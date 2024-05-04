@@ -40,7 +40,15 @@ def run(region, user):
     print(filePath, flush=True)
 
 # C:\Users\Administrator\1v9_automated\script\fileButton.JPG
-    try :
+
+    moveAndClickToFile("fileButton.JPG", 1)
+    moveAndClickToFile("clipboard.png", 1)   
+
+
+def moveAndClickToFile (fileName, sleepTime):
+    filePath = cv2.imread('script/' + fileName)
+
+    try:
         file = pyautogui.locateOnScreen(filePath,
             confidence=0.6,
             minSearchTime=5
@@ -48,31 +56,16 @@ def run(region, user):
     except Exception as e:
         print(e, flush=True)
         return "Could not find file button"
-
+    
     print(file, flush=True)
 
     pyautogui.moveTo(file, duration=1)
-    pyautogui.mouseDown()
-    pyautogui.click(file)
+    pyautogui.click(file)   
 
-    time.sleep(1)
-    
+    time.sleep(sleepTime)
 
-    print("clicking on load accounts from clipboard", flush=True)
+    return
 
-    time.sleep(1)
-
-    load = pyautogui.locateOnScreen('\script\clipboard.png',
-            confidence=0.5,
-            minSearchTime=5
-    )
-    
-    pyautogui.moveTo(load, duration=1)
-    pyautogui.mouseDown()
-    pyautogui.click(load)
-
-    time.sleep(1)   
-    pyautogui.mouseUp()     
 
 
 run(sys.argv[1], sys.argv[2])
