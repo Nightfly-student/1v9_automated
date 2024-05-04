@@ -29,22 +29,21 @@ def run(region, user):
     # press file button and then Load accounts from clipboard
     # check where to click
 
-# C:\Users\Administrator\1v9_automated\script\fileButton.JPG
 
-    # moveAndClickToFile("fileButton.JPG", 1)
-    # moveAndClickToFile("clipboard.png", 2)  
+    moveAndClickToFile("fileButton.JPG", 1)
+    moveAndClickToFile("clipboard.png", 2)  
 
-    # pyautogui.press('tab')
-    # pyautogui.press('tab')
-    # pyautogui.press('tab')
-    # pyautogui.press('enter')
+    pyautogui.press('tab')
+    pyautogui.press('tab')
+    pyautogui.press('tab')
+    pyautogui.press('enter')
 
-    # time.sleep(2)
+    time.sleep(2)
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
     print("imported", flush=True)
-    moveAndClickToFile("checkerButton.PNG", 2, 0.65) 
+    moveAndClickToFile("checkerButton.PNG", 0.5, 0.65) 
     print("clicked checker", flush=True)
     moveAndClickToFile("checkerStart.PNG", 1, 0.65)
 
@@ -97,14 +96,16 @@ def waitUntilFileButton (fileName):
     while True:
         try:
             file = pyautogui.locateOnScreen(filePath,
-                confidence=0.7,
+                confidence=0.5,
             )
+            time.sleep(1)
         except Exception as e:
             return False
 
         if file:
             break
 
+    print("found file button", flush=True)
     return True
 
 run(sys.argv[1], sys.argv[2])
