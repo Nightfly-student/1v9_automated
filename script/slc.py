@@ -35,6 +35,9 @@ def run(region, user):
 
     moveAndClickToFile("fileButton.JPG", 1)
     moveAndClickToFile("clipboard.png", 1)  
+
+    time.sleep(2)
+
     moveAndClickToFile("import.JPG", 1)
 
     time.sleep(2)
@@ -46,9 +49,18 @@ def run(region, user):
 
     time.sleep(2)
 
-    moveAndClickToFile("toAccount.JPG", 1)  
+    moveAndClickToFile("toAccount.JPG", 1) 
+
+    time.sleep(1)
+
     moveAndClickToFile("copyInfo.JPG", 1)
+
+    time.sleep(1)
+
     moveAndClickToFile("copyFormat.JPG", 1)
+
+    time.sleep(1)
+
     moveAndClickToFile("exportToCSV.JPG", 1)
 
     time.sleep(2)
@@ -57,6 +69,7 @@ def run(region, user):
     for i in range(2):
         moveAndClickToFile("edit.JPG", 1)
         moveAndClickToFile("clearAccount.JPG", 1)
+        time.sleep(2)
         moveAndClickToFile("clearAccountAccept.JPG", 1)
 
     return pyperclip.paste()
