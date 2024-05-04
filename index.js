@@ -26,7 +26,10 @@ app.post('/check', async (req, res) => {
     console.log(`stdout: ${data}`);
   });
 
-  res.send('Checking account');
+  python.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+    res.send('Checking account');
+  });
 });
 
 // async function findSLCReborn() {
