@@ -30,7 +30,7 @@ def run(region, user):
     # check where to click
 
 
-    moveAndClickToFile("fileButton.JPG", 1, 0.7)
+    moveAndClickToFile("fileButton.JPG", 2, 0.7)
     moveAndClickToFile("clipboard.png", 2, 0.8)  
 
     pyautogui.press('tab')
@@ -42,7 +42,7 @@ def run(region, user):
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
-    moveAndClickToFile("checkerButton.PNG", 0.5, 0.75) 
+    moveAndClickToFile("checkerButton.PNG", 2, 0.75) 
     moveAndClickToFile("checkerStart.PNG", 1, 0.7)
 
     keepGoing = True
@@ -67,7 +67,7 @@ def run(region, user):
 
     # do it twice to make sure it works
     for i in range(2):
-        moveAndClickToFile("edit.JPG", 1, 0.7)
+        moveAndClickToFile("edit.JPG", 2, 0.7)
         moveAndClickToFile("clearAccount.JPG", 3, 0.7)
         pyautogui.press('enter')
     
