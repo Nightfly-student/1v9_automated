@@ -36,8 +36,8 @@ def run(region, user):
     moveAndClickToFile("fileButton.JPG", 1)
     moveAndClickToFile("clipboard.png", 2)  
 
-    app.window(title_re="Import accounts").set_focus()
-    time.sleep(1)
+    pyautogui.press('tab')
+    pyautogui.press('tab')
 
     moveAndClickToFile("import.JPG", 3, 0.5)
 
