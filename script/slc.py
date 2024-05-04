@@ -41,12 +41,14 @@ def run(region, user):
     pyautogui.press('tab')
     pyautogui.press('enter')
 
+    time.sleep(2)
+
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
-    # moveAndClickToFile("checkerButton.JPG", 1, 0.8) 
-    # moveAndClickToFile("checkerStart.JPG", 1, 0.7)
+    moveAndClickToFile("checkerButton.JPG", 1, 0.8) 
+    moveAndClickToFile("checkerStart.JPG", 1, 0.7)
 
-    # waitUntilFileButton("finished.JPG")
+    waitUntilFileButton("finished.JPG")
 
     # moveAndClickToFile("toAccount.JPG", 1, 0.8) 
 
@@ -94,11 +96,10 @@ def waitUntilFileButton (fileName):
         try:
             file = pyautogui.locateOnScreen(filePath,
                 confidence=0.7,
-                minSearchTime=5
             )
         except Exception as e:
-            return "Could not find file button"
-        
+            return False
+
         if file:
             break
 
