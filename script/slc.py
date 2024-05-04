@@ -30,32 +30,32 @@ def run(region, user):
     # check where to click
 
 
-    # moveAndClickToFile("fileButton.JPG", 1, 0.7)
-    # moveAndClickToFile("clipboard.png", 2, 0.8)  
+    moveAndClickToFile("fileButton.JPG", 1, 0.7)
+    moveAndClickToFile("clipboard.png", 2, 0.8)  
 
-    # pyautogui.press('tab')
-    # pyautogui.press('tab')
-    # pyautogui.press('tab')
-    # pyautogui.press('enter')
+    pyautogui.press('tab')
+    pyautogui.press('tab')
+    pyautogui.press('tab')
+    pyautogui.press('enter')
 
-    # time.sleep(2)
+    time.sleep(2)
 
-    # # moveAndClickToFile("import.JPG", 3, 0.5)
+    # moveAndClickToFile("import.JPG", 3, 0.5)
 
-    # print("imported", flush=True)
-    # moveAndClickToFile("checkerButton.PNG", 0.5, 0.75) 
-    # print("clicked checker", flush=True)
-    # moveAndClickToFile("checkerStart.PNG", 1, 0.7)
+    print("imported", flush=True)
+    moveAndClickToFile("checkerButton.PNG", 0.5, 0.75) 
+    print("clicked checker", flush=True)
+    moveAndClickToFile("checkerStart.PNG", 1, 0.7)
 
-    # keepGoing = True
-    # while keepGoing:
-    #     time.sleep(2)
-    #     found = waitUntilFileButton("finished.JPG")
-    #     print(found, flush=True)
-    #     if found:
-    #         keepGoing = False
-    #     else:
-    #         keepGoing = True
+    keepGoing = True
+    while keepGoing:
+        time.sleep(2)
+        found = waitUntilFileButton("finished.JPG")
+        print(found, flush=True)
+        if found:
+            keepGoing = False
+        else:
+            keepGoing = True
 
     moveAndClickToFile("toAccount.JPG", 1, 0.7) 
 
