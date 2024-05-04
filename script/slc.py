@@ -45,8 +45,8 @@ def run(region, user):
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
-    moveAndClickToFile("checkerButton.JPG", 1, 0.5) 
-    moveAndClickToFile("checkerStart.JPG", 1, 0.5)
+    moveAndClickToFile("checkerButton.JPG", 1) 
+    moveAndClickToFile("checkerStart.JPG", 1)
 
     waitUntilFileButton("finished.JPG")
 
