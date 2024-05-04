@@ -35,7 +35,7 @@ def run(region, user):
 
     print("clicking on file button", flush=True)
 
-    filePath = cv2.imread("/script/fileButton.JPG")
+    filePath = cv2.imread("script/fileButton.JPG")
 
     print(filePath, flush=True)
 
