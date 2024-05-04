@@ -34,7 +34,7 @@ def run(region, user):
 
 
     try :
-        file = pyautogui.locateOnScreen('/clipboard.png',
+        file = pyautogui.locateOnScreen('clipboard.png',
             confidence=0.6,
             minSearchTime=5
         )
