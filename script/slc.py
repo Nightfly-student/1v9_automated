@@ -1,5 +1,6 @@
 from pywinauto.application import Application
 import pyperclip
+import pyautogui
 import sys
 
 
@@ -29,12 +30,19 @@ def run(region, user):
     # press file button and then Load accounts from clipboard
     # check where to click
 
-    menubar = window.child_window(title="menuStrip1", auto_id="menuStrip1", control_type="System.Windows.Forms.MenuStrip")
+    file = pyautogui.locateOnScreen('images/fileButton.JPG',
+    confidence=0.8
+    )
+    
+    pyautogui.click(file)
 
-    menubar.print_control_identifiers()
+    clipboard = pyautogui.locateOnScreen('images/clipboard.png',
+        confidence=0.8
+    )
 
-    window.file.click_input()
-    window.menu_select("File->Load accounts from clipboard")
+    pyautogui.click(clipboard)
+
+
 
 run(sys.argv[1], sys.argv[2])
 
