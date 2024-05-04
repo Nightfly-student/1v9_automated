@@ -70,6 +70,7 @@ def run(region, user):
         moveAndClickToFile("edit.JPG", 2, 0.7)
         moveAndClickToFile("clearAccount.JPG", 3, 0.7)
         pyautogui.press('enter')
+        pyautogui.press('enter')
     
     print(pyperclip.paste(), flush=True)
 
