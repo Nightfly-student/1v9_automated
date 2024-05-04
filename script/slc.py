@@ -42,6 +42,9 @@ def run(region, user):
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
+    window.dump_tree()
+    window.print_control_identifiers(depth=10)
+
     print("imported", flush=True)
     moveAndClickToFile("checkerButton.PNG", 0.5, 0.35) 
     print("clicked checker", flush=True)
