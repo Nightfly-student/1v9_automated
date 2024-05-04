@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "@nut-tree/nut-js": "^4.0.0",
-    "@nut-tree/template-matcher": "2",
     "express": "^4.19.2"
   },
   "name": "1v9_automated",
