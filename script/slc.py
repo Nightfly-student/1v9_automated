@@ -34,7 +34,7 @@ def run(region, user):
 
 
     try :
-        file = pyautogui.locateOnScreen('fileButton.JPG',
+        file = pyautogui.locateOnScreen('/fileButton.JPG',
             confidence=0.6,
             minSearchTime=5
         )
@@ -55,7 +55,7 @@ def run(region, user):
 
     time.sleep(1)
 
-    load = pyautogui.locateOnScreen('clipboard.png',
+    load = pyautogui.locateOnScreen('/clipboard.png',
             confidence=0.5,
             minSearchTime=5
     )
