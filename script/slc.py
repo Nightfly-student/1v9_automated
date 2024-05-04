@@ -70,9 +70,9 @@ def run(region, user):
 
     # do it twice to make sure it works
     for i in range(2):
-        moveAndClickToFile("edit.JPG", 1, 0.8)
+        moveAndClickToFile("edit.JPG", 1, 0.7)
         moveAndClickToFile("clearAccount.JPG", 3, 0.7)
-        moveAndClickToFile("clearAccountAccept.JPG", 1, 0.5)
+        pyautogui.press('enter')
     
     print(pyperclip.paste(), flush=True)
 
