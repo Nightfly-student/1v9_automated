@@ -42,14 +42,19 @@ def run(region, user):
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
-    pyautogui.screenshot('screenshot.png', region=(0, 0, 1920, 1080))
-
     print("imported", flush=True)
     moveAndClickToFile("checkerButton.PNG", 0.5, 0.75) 
     print("clicked checker", flush=True)
     moveAndClickToFile("checkerStart.PNG", 1, 0.7)
 
-    waitUntilFileButton("finished.JPG")
+    keepGoing = True
+    while keepGoing:
+        time.sleep(1)
+        found = waitUntilFileButton("finished.JPG")
+        if found:
+            keepGoing = True
+        else:
+            keepGoing = False
 
     moveAndClickToFile("toAccount.JPG", 1, 0.7) 
 
@@ -97,19 +102,16 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
 
 def waitUntilFileButton (fileName):
     filePath = cv2.imread('script/' + fileName)
-
-    while True:
-        file = pyautogui.locateOnScreen(filePath,
+    
+    file = pyautogui.locateOnScreen(filePath,
                 confidence=0.65,
             )
-        print("waiting for file button", flush=True)
-        time.sleep(1)
-
-        if file is not None:
-            break
-
-    print("found file button", flush=True)
-    return True
+    print("waiting for file button", flush=True)
+    
+    if file == None:
+        return False
+    else:
+        return True
 
 run(sys.argv[1], sys.argv[2])
 
