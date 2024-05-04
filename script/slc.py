@@ -70,6 +70,7 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8):
     try:
         file = pyautogui.locateCenterOnScreen(filePath,
             confidence=confidence,
+            minSearchTime=5
         )
     except Exception as e:
         return "Could not find file button"
