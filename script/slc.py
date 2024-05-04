@@ -82,6 +82,8 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
     # move first only the y axis then x axis
     # pyautogui.move(0, file.y, duration=0.5)
     # pyautogui.move(file.x, 0, duration=0.5)
+    print(file, flush=True)
+
     pyautogui.moveTo(file, duration=0.5)
     pyautogui.click(file, clicks=click, interval=0.0, button='left')   
 
