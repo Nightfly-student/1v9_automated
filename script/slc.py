@@ -6,6 +6,9 @@ import sys
 # make a function that gets information from the user
 
 def run(region, user):
+
+    print(region, user)
+    print("Running")
     # foucs on the window SLC Checker - Reborn
     app = Application().connect(title_re="SLC Checker - Reborn")
 
