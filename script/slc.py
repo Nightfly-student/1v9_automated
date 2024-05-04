@@ -42,16 +42,13 @@ def run(region, user):
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
-    print("imported", flush=True)
     moveAndClickToFile("checkerButton.PNG", 0.5, 0.75) 
-    print("clicked checker", flush=True)
     moveAndClickToFile("checkerStart.PNG", 1, 0.7)
 
     keepGoing = True
     while keepGoing:
         time.sleep(2)
         found = waitUntilFileButton("finished.JPG")
-        print(found, flush=True)
         if found:
             keepGoing = False
         else:
@@ -78,7 +75,7 @@ def run(region, user):
 
     time.sleep(5)
 
-    return pyperclip.paste()
+    return
 
 
 
@@ -90,13 +87,11 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
             confidence=confidence,
         )
     except Exception as e:
-        print("Could not find file button", flush=True)
         return "Could not find file button"
     
     # move first only the y axis then x axis
     pyautogui.move(0, file.y, duration=0.5)
     pyautogui.move(file.x, 0, duration=0.5)
-    print(file, flush=True)
 
     # pyautogui.moveTo(file, duration=0.5)
     pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2)   
@@ -112,10 +107,8 @@ def waitUntilFileButton (fileName):
         pyautogui.locateOnScreen(filePath,
             confidence=0.65,
         )
-        print("waiting for file button", flush=True)
         return True
     except Exception as e:
-        print("Could not find file button", flush=True)
         return False
 
 def moveAndClickToFileBackwards (fileName, sleepTime, confidence=0.8, click=1):
@@ -126,13 +119,11 @@ def moveAndClickToFileBackwards (fileName, sleepTime, confidence=0.8, click=1):
             confidence=confidence,
         )
     except Exception as e:
-        print("Could not find file button", flush=True)
         return "Could not find file button"
     
     # move first only the y axis then x axis
     pyautogui.move(file.x, 0, duration=0.5)
     pyautogui.move(0, file.y, duration=0.5)
-    print(file, flush=True)
 
     # pyautogui.moveTo(file, duration=0.5)
     pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2)   
