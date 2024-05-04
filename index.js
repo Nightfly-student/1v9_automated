@@ -33,7 +33,7 @@ app.post('/check', async (req, res) => {
 
   python.on('close', (code) => {
     console.log(`child process close all stdio with code ${code}`);
-    res.send(csv[0]);
+    res.send(csv);
   });
 });
 
@@ -353,5 +353,23 @@ function csvJSON(csv) {
   }
 
   //return result; //JavaScript object
-  return result; //JSON
+
+  return {
+    region: result[0].Region,
+    access: result[0].EmailStatus.toUpperCase(),
+    characters: result[0].Champions,
+    skins: result[0].Skins,
+    currentrank:
+      result[0].CurrentSoloRank.split(' ')[0] +
+      ' ' +
+      result[0].CurrentSoloRank.split(' ')[1],
+    previousrank: result[0].PreviousSoloRank,
+    flexrank:
+      result[0].CurrentSoloRank.split(' ')[0] +
+      ' ' +
+      result[0].CurrentSoloRank.split(' ')[1],
+    be: result[0].BE,
+    level: result[0].Level,
+    rp: result[0].RP,
+  }; //JSON
 }
