@@ -14,6 +14,7 @@ app.listen(port, () => {
 });
 
 app.post('/check', async (req, res) => {
+  var csv;
   const { spawn } = require('child_process');
 
   const python = spawn('python', [
@@ -23,12 +24,7 @@ app.post('/check', async (req, res) => {
   ]);
 
   python.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
-  });
-
-  python.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
-    res.send('Checking account');
+    res.send(csvJSON(data.toString()));
   });
 });
 
@@ -325,31 +321,28 @@ app.post('/check', async (req, res) => {
 //   await mouse.leftClick();
 // }
 
-// function csvJSON(csv){
+function csvJSON(csv) {
+  var lines = csv.split('\n');
 
-//   var lines=csv.split("\n");
+  var result = [];
 
-//   var result = [];
+  // NOTE: If your columns contain commas in their values, you'll need
+  // to deal with those before doing the next step
+  // (you might convert them to &&& or something, then covert them back later)
+  // jsfiddle showing the issue https://jsfiddle.net/
+  var headers = lines[0].split(',');
 
-//   // NOTE: If your columns contain commas in their values, you'll need
-//   // to deal with those before doing the next step
-//   // (you might convert them to &&& or something, then covert them back later)
-//   // jsfiddle showing the issue https://jsfiddle.net/
-//   var headers=lines[0].split(",");
+  for (var i = 1; i < lines.length; i++) {
+    var obj = {};
+    var currentline = lines[i].split(',');
 
-//   for(var i=1;i<lines.length;i++){
+    for (var j = 0; j < headers.length; j++) {
+      obj[headers[j].replaceAll(' ', '')] = currentline[j];
+    }
 
-//       var obj = {};
-//       var currentline=lines[i].split(",");
+    result.push(obj);
+  }
 
-//       for(var j=0;j<headers.length;j++){
-//           obj[headers[j].replaceAll(" ", "")] = currentline[j];
-//       }
-
-//       result.push(obj);
-
-//   }
-
-//   //return result; //JavaScript object
-//   return result; //JSON
-// }
+  //return result; //JavaScript object
+  return result; //JSON
+}
