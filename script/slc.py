@@ -47,7 +47,7 @@ def run(region, user):
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
     print("imported", flush=True)
-    moveAndClickToFile("checkerButton.JPG", 1) 
+    moveAndClickToFile("checkerButton.JPG", 1, 0.5, 2) 
     print("clicked checker", flush=True)
     moveAndClickToFile("checkerStart.JPG", 1)
 
@@ -77,6 +77,7 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
     try:
         file = pyautogui.locateCenterOnScreen(filePath,
             confidence=confidence,
+            grayscale=True
         )
     except Exception as e:
         print(e, flush=True)
