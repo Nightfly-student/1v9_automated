@@ -49,12 +49,13 @@ def run(region, user):
 
     keepGoing = True
     while keepGoing:
-        time.sleep(1)
+        time.sleep(2)
         found = waitUntilFileButton("finished.JPG")
+        print(found, flush=True)
         if found:
-            keepGoing = True
-        else:
             keepGoing = False
+        else:
+            keepGoing = True
 
     moveAndClickToFile("toAccount.JPG", 1, 0.7) 
 
