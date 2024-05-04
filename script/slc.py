@@ -11,7 +11,9 @@ def run(region, user):
     print(region, user, flush=True)
     print("Running", flush=True)
     # foucs on the window SLC Checker - Reborn
-    pyautogui.getWindowsWithTitle("SLC Checker - Reborn")[0].maximize()
+    window = pyautogui.getWindowsWithTitle("SLC Checker - Reborn")[0].maximize()
+
+    print(window, flush=True)
 
     # add user to the clipboard
     pyperclip.copy(user)
