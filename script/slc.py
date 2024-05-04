@@ -75,7 +75,7 @@ def run(region, user):
 
     time.sleep(5)
 
-    return
+    return pyperclip.paste()
 
 
 
