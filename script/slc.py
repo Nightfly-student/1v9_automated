@@ -41,9 +41,6 @@ def run(region, user):
 
     time.sleep(2)
 
-    window.set_focus()
-
-
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
     print("imported", flush=True)
