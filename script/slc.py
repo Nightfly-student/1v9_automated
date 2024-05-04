@@ -39,6 +39,10 @@ def run(region, user):
 
         if file:
             break
+        
+    pyautogui.moveTo(file)
+
+    time.sleep(1)
 
     pyautogui.click(file)
 
@@ -52,6 +56,10 @@ def run(region, user):
         if load:
             break
     
+    pyautogui.moveTo(load)
+
+    time.sleep(1)        
+
     pyautogui.click(load)
 
 
