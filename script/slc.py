@@ -33,10 +33,14 @@ def run(region, user):
     print("clicking on file button", flush=True)
 
 
-    file = pyautogui.locateOnScreen('/images/fileButton.JPG',
+    try :
+        file = pyautogui.locateOnScreen('/images/fileButton.JPG',
             confidence=0.6,
             minSearchTime=5
-    )
+        )
+    except Exception as e:
+        print(e, flush=True)
+        return "Could not find file button"
 
     print(file, flush=True)
 
