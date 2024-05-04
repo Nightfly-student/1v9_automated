@@ -1,7 +1,5 @@
 const express = require('express');
 
-require('@nut-tree/template-matcher');
-
 const app = express();
 const port = 8080 || process.env.PORT;
 
@@ -27,6 +25,8 @@ app.post('/check', async (req, res) => {
   python.stdout.on('data', (data) => {
     console.log(`stdout: ${data}`);
   });
+
+  res.send('Checking account');
 });
 
 // async function findSLCReborn() {
