@@ -76,7 +76,7 @@ def moveAndClickToFile (fileName, sleepTime):
 
     time.sleep(sleepTime)
 
-    return
+    return print(pyperclip.paste(), flush=True)
 
 def waitUntilFileButton (fileName):
     filePath = cv2.imread('script/' + fileName)
