@@ -32,13 +32,10 @@ def run(region, user):
 
     print("clicking on file button", flush=True)
 
-    while True:
-        file = pyautogui.locateOnScreen('/images/fileButton.JPG',
-            confidence=0.6
-        )
 
-        if file:
-            break
+    file = pyautogui.locateOnScreen('/images/fileButton.JPG',
+            confidence=0.6
+    )
 
     print(file, flush=True)
 
@@ -50,13 +47,11 @@ def run(region, user):
 
     print("clicking on load accounts from clipboard", flush=True)
 
-    while True:
-        load = pyautogui.locateOnScreen('/images/clipboard.png',
-            confidence=0.5
-        )
+    time.sleep(1)
 
-        if load:
-            break
+    load = pyautogui.locateOnScreen('/images/clipboard.png',
+            confidence=0.5
+    )
     
     pyautogui.moveTo(load)
 
