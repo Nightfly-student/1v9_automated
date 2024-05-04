@@ -73,7 +73,7 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
             minSearchTime=5
         )
     except Exception as e:
-        print(e)
+        print(e, flush=True)
         return "Could not find file button"
     
     # move first only the y axis then x axis
