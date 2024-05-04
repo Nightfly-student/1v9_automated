@@ -29,8 +29,6 @@ def run(region, user):
     # press file button and then Load accounts from clipboard
     # check where to click
 
-    filePath = cv2.imread("script/fileButton.JPG")
-
 # C:\Users\Administrator\1v9_automated\script\fileButton.JPG
 
     moveAndClickToFile("fileButton.JPG", 1)
@@ -42,6 +40,9 @@ def run(region, user):
     pyautogui.press('enter')
 
     time.sleep(2)
+
+    window.set_focus()
+
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
@@ -74,7 +75,6 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
     try:
         file = pyautogui.locateCenterOnScreen(filePath,
             confidence=confidence,
-            minSearchTime=5
         )
     except Exception as e:
         print(e, flush=True)
