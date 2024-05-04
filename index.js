@@ -24,6 +24,7 @@ app.post('/check', async (req, res) => {
   ]);
 
   python.stdout.on('data', (data) => {
+    console.log(`stdout: ${data}`);
     csv = csvJSON(data.toString());
   });
 
