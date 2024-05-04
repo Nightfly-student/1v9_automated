@@ -36,7 +36,7 @@ def run(region, user):
     moveAndClickToFile("fileButton.JPG", 1)
     moveAndClickToFile("clipboard.png", 3)  
 
-    moveAndClickToFile("import.JPG", 1)
+    moveAndClickToFile("import.PNG", 1)
 
     moveAndClickToFile("checkerButton.JPG", 1) 
     moveAndClickToFile("checkerStart.JPG", 1)
@@ -66,7 +66,7 @@ def moveAndClickToFile (fileName, sleepTime):
 
     try:
         file = pyautogui.locateOnScreen(filePath,
-            confidence=0.8,
+            confidence=0.5,
         )
     except Exception as e:
         return "Could not find file button"
