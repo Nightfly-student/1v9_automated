@@ -43,9 +43,9 @@ def run(region, user):
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
     print("imported", flush=True)
-    moveAndClickToFile("checkerButton.PNG", 0.5, 0.65) 
+    moveAndClickToFile("checkerButton.PNG", 0.5, 0.5) 
     print("clicked checker", flush=True)
-    moveAndClickToFile("checkerStart.PNG", 1, 0.65)
+    moveAndClickToFile("checkerStart.PNG", 1, 0.5)
 
     waitUntilFileButton("finished.JPG")
 
