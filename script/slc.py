@@ -2,7 +2,7 @@ from pywinauto.application import Application
 import pyperclip
 import pyautogui
 import sys
-
+import time
 
 # make a function that gets information from the user
 
@@ -30,18 +30,29 @@ def run(region, user):
     # press file button and then Load accounts from clipboard
     # check where to click
 
-    file = pyautogui.locateOnScreen('images/fileButton.JPG',
-    confidence=0.8
-    )
-    
+    print("clicking on file button", flush=True)
+
+    while True:
+        file = pyautogui.locateOnScreen('images/fileButton.JPG',
+            confidence=0.6
+        )
+
+        if file:
+            break
+
     pyautogui.click(file)
 
-    clipboard = pyautogui.locateOnScreen('images/clipboard.png',
-        confidence=0.8
-    )
+    print("clicking on load accounts from clipboard", flush=True)
 
-    pyautogui.click(clipboard)
+    while True:
+        load = pyautogui.locateOnScreen('images/clipboard.png',
+            confidence=0.6
+        )
 
+        if load:
+            break
+    
+    pyautogui.click(load)
 
 
 run(sys.argv[1], sys.argv[2])
