@@ -11,7 +11,7 @@ def run(region, user):
     print(region, user, flush=True)
     print("Running", flush=True)
     # foucs on the window SLC Checker - Reborn
-    window = pyautogui.getWindowsWithTitle("SLC Checker - Reborn")[0].maximize()
+    window = pyautogui.getWindowsWithTitle("SLC Checker - Reborn")
 
     print(window, flush=True)
 
