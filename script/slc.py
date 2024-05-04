@@ -28,8 +28,10 @@ def run(region, user):
 
     # press file button and then Load accounts from clipboard
     # check where to click
-    app.window(title_re="SLC Checker - Reborn").print_control_identifiers()
 
+    menubar = window.child_window(title="menuStrip1", auto_id="menuStrip1", control_type="System.Windows.Forms.MenuStrip")
+
+    menubar.print_control_identifiers()
 
     window.file.click_input()
     window.menu_select("File->Load accounts from clipboard")
