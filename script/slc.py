@@ -39,7 +39,7 @@ def run(region, user):
     pyautogui.press('tab')
     pyautogui.press('enter')
 
-    time.sleep(5)
+    time.sleep(2)
 
     window.set_focus()
 
