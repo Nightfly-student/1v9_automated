@@ -45,7 +45,7 @@ def run(region, user):
     pyautogui.screenshot('screenshot.png', region=(0, 0, 1920, 1080))
 
     print("imported", flush=True)
-    moveAndClickToFile("checkerButton.PNG", 0.5, 0.35) 
+    moveAndClickToFile("checkerButton.PNG", 0.5, 0.6) 
     print("clicked checker", flush=True)
     moveAndClickToFile("checkerStart.PNG", 1, 0.5)
 
