@@ -24,19 +24,16 @@ app.post('/check', async (req, res) => {
   ]);
 
   python.stdout.on('data', (data) => {
-    if (
-      data !== null &&
-      data.toString().length > 0 &&
-      data.toString().includes('R')
-    ) {
+    const holder = data.toString();
+    if (data !== null && holder.length > 0 && holder.includes('R')) {
       console.log(`stdout: ${data}`);
-      csv = data.toString();
+      csv = csvJSON(data.toString());
     }
   });
 
   python.on('close', (code) => {
     console.log(`child process close all stdio with code ${code}`);
-    res.send(csvJSON(csv));
+    res.send(csv);
   });
 });
 
