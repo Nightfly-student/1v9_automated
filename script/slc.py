@@ -72,6 +72,7 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
 
     try:
         file = pyautogui.locateCenterOnScreen(filePath,
+            grayscale=True,
             confidence=confidence,
         )
     except Exception as e:
@@ -96,6 +97,7 @@ def waitUntilFileButton (fileName):
     while True:
         try:
             file = pyautogui.locateOnScreen(filePath,
+                grayscale=True,
                 confidence=0.65,
             )
             time.sleep(1)
