@@ -11,21 +11,10 @@ def run(region, user):
     print(region, user, flush=True)
     print("Running", flush=True)
     # foucs on the window SLC Checker - Reborn
-    app = Application().connect(title_re="SLC Checker - Reborn")
+    pyautogui.getWindowsWithTitle("SLC Checker - Reborn")[0].maximize()
 
-    # get the window
-
-    window = app.window(title_re="SLC Checker - Reborn")
-
-    # if no window is found, return an error message
-    if not window.exists():
-        return "No window found"
-    
     # add user to the clipboard
     pyperclip.copy(user)
-
-    # focus on the window
-    window.set_focus()
 
     # press file button and then Load accounts from clipboard
     # check where to click
