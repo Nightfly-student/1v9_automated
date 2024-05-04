@@ -24,8 +24,8 @@ app.post('/check', async (req, res) => {
   ]);
 
   python.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
-    if (data.toString().includes('Region')) {
+    if (data !== null && data.toString().length > 0) {
+      console.log(`stdout: ${data}`);
       csv = csvJSON(data.toString());
     }
   });
