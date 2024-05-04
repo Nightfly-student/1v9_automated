@@ -71,6 +71,9 @@ def moveAndClickToFile (fileName, sleepTime):
     except Exception as e:
         return "Could not find file button"
     
+    # move first only the y axis then x axis
+    pyautogui.move(0, file.y, duration=0.5)
+    pyautogui.move(file.x, 0, duration=0.5)
     pyautogui.click(file)   
 
     time.sleep(sleepTime)
