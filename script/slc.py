@@ -35,9 +35,13 @@ def run(region, user):
 
     print("clicking on file button", flush=True)
 
+    filePath = cv2.imread("/script/fileButton.JPG")
+
+    print(filePath, flush=True)
+
 # C:\Users\Administrator\1v9_automated\script\fileButton.JPG
     try :
-        file = pyautogui.locateOnScreen(Path.cwd() / 'script' / 'fileButton.JPG',
+        file = pyautogui.locateOnScreen(filePath,
             confidence=0.6,
             minSearchTime=5
         )
