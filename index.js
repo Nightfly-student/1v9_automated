@@ -26,13 +26,13 @@ app.post('/check', async (req, res) => {
   python.stdout.on('data', (data) => {
     const holder = data.toString();
     if (data !== null && holder.length > 0 && holder.includes('R')) {
-      console.log(`stdout: ${data}`);
       csv = data.toString();
     }
   });
 
   python.on('close', (code) => {
     console.log(`child process close all stdio with code ${code}`);
+    console.log(csv);
 
     res.send(csvJSON(csv));
   });
