@@ -74,8 +74,6 @@ def run(region, user):
     
     print(pyperclip.paste(), flush=True)
 
-    time.sleep(5)
-
     return pyperclip.paste()
 
 
