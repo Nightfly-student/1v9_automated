@@ -30,20 +30,18 @@ def run(region, user):
     # check where to click
 
 
-    moveAndClickToFile("fileButton.JPG", 2, 0.7)
-    moveAndClickToFile("clipboard.png", 2, 0.8)  
+    moveAndClickToFile("fileButton.JPG", 0.5, 0.7)
+    moveAndClickToFile("clipboard.png", 1.5, 0.8)  
 
     pyautogui.press('tab')
     pyautogui.press('tab')
     pyautogui.press('tab')
     pyautogui.press('enter')
 
-    time.sleep(2)
-
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
-    moveAndClickToFile("checkerButton.PNG", 2, 0.75) 
-    moveAndClickToFile("checkerStart.PNG", 1, 0.7)
+    moveAndClickToFile("checkerButton.PNG", 0.5, 0.75) 
+    moveAndClickToFile("checkerStart.PNG", 0.5, 0.7)
 
     keepGoing = True
     while keepGoing:
@@ -54,21 +52,19 @@ def run(region, user):
         else:
             keepGoing = True
 
-    moveAndClickToFile("toAccount.JPG", 1, 0.7) 
+    moveAndClickToFile("toAccount.JPG", 0.2, 0.7) 
 
     pyautogui.rightClick(duration=0.5)
     time.sleep(1)
 
-    moveAndClickToFile("copyInfo.JPG", 1, 0.7)
-    moveAndClickToFileBackwards("copyFormat.JPG", 2, 0.7)
-    moveAndClickToFile("exportToCSV.JPG", 1, 0.85)
-
-    time.sleep(2)
+    moveAndClickToFile("copyInfo.JPG", 0.4, 0.7)
+    moveAndClickToFileBackwards("copyFormat.JPG", 0.4, 0.7)
+    moveAndClickToFile("exportToCSV.JPG", 0.2, 0.85)
 
     # do it twice to make sure it works
     for i in range(2):
-        moveAndClickToFile("edit.JPG", 2, 0.7)
-        moveAndClickToFile("clearAccount.JPG", 3, 0.7)
+        moveAndClickToFile("edit.JPG", 0.5, 0.7)
+        moveAndClickToFile("clearAccount.JPG", 1.5, 0.7)
         pyautogui.press('enter')
         pyautogui.press('enter')
     
