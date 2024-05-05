@@ -40,8 +40,8 @@ def run(region, user):
 
     # moveAndClickToFile("import.JPG", 3, 0.5)
 
-    moveAndClickToFile("checkerButton.PNG", 0.5, 0.75) 
-    moveAndClickToFile("checkerStart.PNG", 0.5, 0.7)
+    moveAndClickToFile("checkerButton.PNG", 0.2, 0.75) 
+    moveAndClickToFile("checkerStart.PNG", 0.2, 0.7)
 
     keepGoing = True
     while keepGoing:
@@ -58,8 +58,8 @@ def run(region, user):
     time.sleep(1)
 
     moveAndClickToFile("copyInfo.JPG", 0.4, 0.7)
-    moveAndClickToFileBackwards("copyFormat.JPG", 0.4, 0.7)
-    moveAndClickToFile("exportToCSV.JPG", 0.2, 0.85)
+    moveAndClickToFileBackwards("copyFormat.JPG", 0.6, 0.7)
+    moveAndClickToFile("exportToCSV.JPG", 1, 0.85)
 
     # do it twice to make sure it works
     for i in range(2):
