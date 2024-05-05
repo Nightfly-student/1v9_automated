@@ -33,11 +33,8 @@ app.post('/check', async (req, res) => {
 
   python.on('close', (code) => {
     console.log(`child process close all stdio with code ${code}`);
-    if (!csv) {
-      res.status(404).send({ message: 'Not found' });
-    } else {
-      res.send(csv);
-    }
+
+    res.send(csv);
   });
 });
 
@@ -64,8 +61,6 @@ function csvJSON(csv) {
   if (result.length === 0 || (result[0] && result[0].EmailStatus)) {
     return null;
   }
-
-  console.log(result);
 
   return {
     region: result[0].Region,
