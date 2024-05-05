@@ -33,6 +33,10 @@ app.post('/check', async (req, res) => {
   python.on('close', (code) => {
     console.log(`child process close all stdio with code ${code}`);
     console.log(csv);
+    if (csv === undefined || csv === null || csv === '') {
+      res.send(null);
+      return;
+    }
 
     res.send(csvJSON(csv));
   });
