@@ -61,7 +61,7 @@ function csvJSON(csv) {
 
   //return result; //JavaScript object
 
-  if (result.length === 0 || (result[0] && result[0].Region)) {
+  if (result.length === 0 || (result[0] && result[0].EmailStatus)) {
     return null;
   }
 
