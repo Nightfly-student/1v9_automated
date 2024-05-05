@@ -43,39 +43,43 @@ app.post('/check', async (req, res) => {
 });
 
 function csvJSON(csv) {
-  var lines = csv.split('\n');
+  try {
+    var lines = csv.split('\n');
 
-  var result = [];
+    var result = [];
 
-  var headers = lines[0].split(',');
+    var headers = lines[0].split(',');
 
-  for (var i = 1; i < lines.length; i++) {
-    var obj = {};
-    var currentline = lines[i].split(',');
+    for (var i = 1; i < lines.length; i++) {
+      var obj = {};
+      var currentline = lines[i].split(',');
 
-    for (var j = 0; j < headers.length; j++) {
-      obj[headers[j].replaceAll(' ', '')] = currentline[j];
+      for (var j = 0; j < headers.length; j++) {
+        obj[headers[j].replaceAll(' ', '')] = currentline[j];
+      }
+
+      result.push(obj);
     }
 
-    result.push(obj);
+    return {
+      region: result[0].Region,
+      access: result[0].EmailStatus.toUpperCase(),
+      characters: result[0].Champions,
+      skins: result[0].Skins,
+      currentrank:
+        result[0].CurrentSoloRank.split(' ')[0] +
+        ' ' +
+        result[0].CurrentSoloRank.split(' ')[1],
+      previousrank: result[0].PreviousSoloRank,
+      flexrank:
+        result[0].CurrentSoloRank.split(' ')[0] +
+        ' ' +
+        result[0].CurrentSoloRank.split(' ')[1],
+      be: result[0].BE,
+      level: result[0].Level,
+      rp: result[0].RP,
+    }; //JSON
+  } catch (e) {
+    return null;
   }
-
-  return {
-    region: result[0].Region,
-    access: result[0].EmailStatus.toUpperCase(),
-    characters: result[0].Champions,
-    skins: result[0].Skins,
-    currentrank:
-      result[0].CurrentSoloRank.split(' ')[0] +
-      ' ' +
-      result[0].CurrentSoloRank.split(' ')[1],
-    previousrank: result[0].PreviousSoloRank,
-    flexrank:
-      result[0].CurrentSoloRank.split(' ')[0] +
-      ' ' +
-      result[0].CurrentSoloRank.split(' ')[1],
-    be: result[0].BE,
-    level: result[0].Level,
-    rp: result[0].RP,
-  }; //JSON
 }
