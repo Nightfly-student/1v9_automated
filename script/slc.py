@@ -91,11 +91,11 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
         return "Could not find file button"
     
     # move first only the y axis then x axis
-    pyautogui.move(0, file.y, duration=0.2  _pause=False)
-    pyautogui.move(file.x, 0, duration=0.2, _pause=False)
+    pyautogui.move(0, file.y, duration=0.2, tween=pyautogui.easeInOutQuad)
+    pyautogui.move(file.x, 0, duration=0.2, tween=pyautogui.easeInOutQuad)
 
     # pyautogui.moveTo(file, duration=0.5)
-    pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2, tween=pyautogui.easeInOutQuad,  _pause=False)   
+    pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2)   
 
     time.sleep(sleepTime)
 
@@ -123,11 +123,11 @@ def moveAndClickToFileBackwards (fileName, sleepTime, confidence=0.8, click=1):
         return "Could not find file button"
     
     # move first only the y axis then x axis
-    pyautogui.move(file.x, 0, duration=0.2,  _pause=False)
-    pyautogui.move(0, file.y, duration=0.2,  _pause=False)
+    pyautogui.move(file.x, 0, duration=0.2, tween=pyautogui.easeInOutQuad)
+    pyautogui.move(0, file.y, duration=0.2, tween=pyautogui.easeInOutQuad)
 
     # pyautogui.moveTo(file, duration=0.5)
-    pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2,  _pause=False)   
+    pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2)   
 
     time.sleep(sleepTime)
 
