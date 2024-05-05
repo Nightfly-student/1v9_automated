@@ -61,7 +61,7 @@ def run(region, user):
 
     moveAndClickToFile("copyInfo.JPG", 1, 0.7)
     moveAndClickToFileBackwards("copyFormat.JPG", 2, 0.7)
-    moveAndClickToFileBackwards("exportToCSV.JPG", 1, 0.85)
+    moveAndClickToFile("exportToCSV.JPG", 1, 0.85)
 
     time.sleep(2)
 
@@ -91,8 +91,8 @@ def moveAndClickToFile (fileName, sleepTime, confidence=0.8, click=1):
         return "Could not find file button"
     
     # move first only the y axis then x axis
-    pyautogui.move(0, file.y, duration=0.2, tween=pyautogui.easeInOutQuad)
-    pyautogui.move(file.x, 0, duration=0.2, tween=pyautogui.easeInOutQuad)
+    pyautogui.move(0, file.y, duration=1, tween=pyautogui.easeInOutQuad)
+    pyautogui.move(file.x, 0, duration=1, tween=pyautogui.easeInOutQuad)
 
     # pyautogui.moveTo(file, duration=0.5)
     pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2)   
@@ -123,8 +123,8 @@ def moveAndClickToFileBackwards (fileName, sleepTime, confidence=0.8, click=1):
         return "Could not find file button"
     
     # move first only the y axis then x axis
-    pyautogui.move(file.x, 0, duration=0.2, tween=pyautogui.easeInOutQuad)
-    pyautogui.move(0, file.y, duration=0.2, tween=pyautogui.easeInOutQuad)
+    pyautogui.move(file.x, 0, duration=1, tween=pyautogui.easeInOutQuad)
+    pyautogui.move(0, file.y, duration=1, tween=pyautogui.easeInOutQuad)
 
     # pyautogui.moveTo(file, duration=0.5)
     pyautogui.click(file, clicks=click, interval=0.0, button='left', duration=0.2)   
