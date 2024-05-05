@@ -60,12 +60,6 @@ function csvJSON(csv) {
     result.push(obj);
   }
 
-  //return result; //JavaScript object
-
-  if (result.length === 0 || (result[0] && result[0].EmailStatus)) {
-    return null;
-  }
-
   return {
     region: result[0].Region,
     access: result[0].EmailStatus.toUpperCase(),
